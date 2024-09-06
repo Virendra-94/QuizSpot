@@ -43,7 +43,7 @@ function Register() {
       }, 5000);
       return;
     } else {
-      const response = await fetch("http://localhost:5000/api/register", {
+      const response = await fetch("https://quiz-spot-server.vercel.app/api/register", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

@@ -14,10 +14,10 @@ function Quiz() {
   const [error, setError] = useState(false);
   const [errorMsg, setErrorMsg] = useState("");
   const [loading, setLoading] = useState(false);
-  const [timeLeft, setTimeLeft] = useState(30); // 30 second timer
+  const [timeLeft, setTimeLeft] = useState(30); 
   let score = 0;
 
-  // Set up token check in useEffect
+ 
   useEffect(() => {
     const token = localStorage.getItem("token");
     if (token) {
@@ -36,7 +36,7 @@ function Quiz() {
     }
   }, [history]);
 
-  // Timer Effect
+ 
   useEffect(() => {
     if (timeLeft === 0) {
       handleAutoNext();
@@ -47,9 +47,9 @@ function Quiz() {
     return () => clearInterval(timer);
   }, [timeLeft]);
 
-  // Reset timer when question changes
+  
   useEffect(() => {
-    setTimeLeft(30); // Reset to 30 seconds on question change
+    setTimeLeft(30); 
   }, [quesNumber]);
 
   function handleQuestionChange(event) {
@@ -87,7 +87,7 @@ function Quiz() {
     });
     score = score + myScore;
 
-    const req = await fetch("http://localhost:5000/api/result", {
+    const req = await fetch("https://quiz-spot-server.vercel.app/api/result", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
