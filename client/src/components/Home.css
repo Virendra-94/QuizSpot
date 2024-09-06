@@ -1,0 +1,169 @@
+body {
+    /* background: rgb(35, 35, 142); */
+    background: linear-gradient(90deg, #141e30 0%, #243b55 100%);
+    margin: 0;
+    padding: 0;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.loader {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.heading {
+    font-weight: bolder;
+    font-size: 2.5rem;
+    color: #ffffff;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.heading2 {
+    font-weight: bolder;
+    font-size: 1.8rem;
+    color: #c8c6c6;
+    text-align: center;
+    margin-top: 10px;
+}
+
+.form {
+    margin-top: 2%;
+    width: 90%;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: rgb(255, 255, 255);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+    margin-bottom: 2%;
+}
+
+.form label {
+    font-weight: bolder;
+    font-size: 1.2rem;
+    color: #000;
+}
+
+.form select {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+}
+
+.form button {
+    width: 100%;
+    max-width: 300px;
+    padding: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    cursor: pointer;
+    justify-content: center;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    background-color: rgb(32, 32, 130);
+    color: #fff;
+    font-weight: bolder;
+    font-size: 1.3rem;
+}
+
+.form .error {
+    font-size: 1.4rem;
+    color: rgb(238, 56, 56);
+    text-align: left;
+    margin-left: 5px;
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+
+/* Responsive button alignment */
+.btns {
+    margin-top: 30px;
+    text-align: center;
+}
+
+.logout,
+.history {
+    width: 100%;
+    max-width: 200px;
+    display: inline-block;
+    margin-right: 20px;
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: rgb(32, 32, 130);
+    color: #fff;
+    border: 1px solid #000;
+    font-weight: bold;
+    font-size: 1.2em;
+    cursor: pointer;
+}
+
+/* Media Queries for responsiveness */
+@media (max-width: 768px) {
+    .heading {
+        font-size: 2rem;
+    }
+
+    .heading2 {
+        font-size: 1.5rem;
+    }
+
+    .form {
+        width: 95%;
+        padding: 20px;
+    }
+
+    .form select,
+    .form button {
+        font-size: 1rem;
+    }
+
+    .logout,
+    .history {
+        width: 100%;
+        margin-right: 0;
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .heading {
+        font-size: 1.5rem;
+    }
+
+    .heading2 {
+        font-size: 1.2rem;
+    }
+
+    .form {
+        padding: 15px;
+    }
+
+    .form label {
+        font-size: 1rem;
+    }
+
+    .form select {
+        padding: 8px;
+    }
+
+    .form button {
+        font-size: 1rem;
+    }
+
+    .logout,
+    .history {
+        width: 100%;
+        font-size: 0.9rem;
+    }
+}

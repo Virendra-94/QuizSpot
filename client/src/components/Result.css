@@ -1,0 +1,99 @@
+body {
+    background: rgb(32, 32, 130);
+    background: linear-gradient(90deg, #141e30 0%, #243b55 100%);
+    margin: 0;
+    padding: 0;
+    font-family: 'Montserrat', sans-serif;
+  }
+  
+  .heading {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bolder;
+    font-size: 2.5rem;
+    color: #ffffff;
+    text-align: center;
+    margin-top: 20px;
+  }
+  
+  .score {
+    margin-top: 5%;
+    width: 90%;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: rgb(255, 255, 255);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+    margin-bottom: 5%;
+  }
+  
+  .score p {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.8rem;
+    color: #000;
+    text-align: center;
+    margin: 0;
+  }
+  
+  .score button {
+    font-family: 'Montserrat', sans-serif;
+    display: flex;
+    justify-content: center;
+    font-size: 1.2rem;
+    color: #fff;
+    background-color: rgb(32, 32, 130);
+    border: 1px solid rgb(51, 38, 168);
+    padding: 12px;
+    border-radius: 10px;
+    margin-top: 2%;
+    margin-left: auto;
+    margin-right: auto;
+    cursor: pointer;
+    width: 50%;
+    display: block;
+  }
+  
+  /* Media Queries for Responsiveness */
+  @media (max-width: 768px) {
+    .heading {
+      font-size: 2rem;
+    }
+  
+    .score {
+      width: 95%;
+      padding: 15px;
+    }
+  
+    .score p {
+      font-size: 1.5rem;
+    }
+  
+    .score button {
+      font-size: 1.1rem;
+      padding: 10px;
+      width: 60%;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .heading {
+      font-size: 1.8rem;
+    }
+  
+    .score {
+      width: 100%;
+      padding: 10px;
+    }
+  
+    .score p {
+      font-size: 1.2rem;
+    }
+  
+    .score button {
+      font-size: 1rem;
+      padding: 8px;
+      width: 70%;
+    }
+  }
+  
