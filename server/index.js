@@ -11,13 +11,16 @@ const bcrypt = require("bcrypt");
 const app = express();
 const saltRounds = parseInt(process.env.SALT_ROUNDS);
 
-app.use(cors());
+app.use(cors({
+  origin: 'https://quiz-spot.vercel.app', 
+  methods: ['GET', 'POST', 'PUT', 'DELETE'],
+  allowedHeaders: ['Content-Type', 'Authorization'],
+}));
 app.use(express.json());
 
 mongoose.connect("mongodb+srv://virendrakumarofficial94:quizpass@cluster0.zw6ft.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0");
 
 app.post("/api/register", (req, res) => {
-  if(req.method === 'OPTIONS') { return res.status(200).json(({ body: "OK" })) }
   try {
     bcrypt.hash(req.body.password, saltRounds, function (err, hash) {
       if (err) {
@@ -41,7 +44,6 @@ app.post("/api/register", (req, res) => {
 });
 
 app.post("/api/login", async (req, res) => {
-  if(req.method === 'OPTIONS') { return res.status(200).json(({ body: "OK" })) }
   const user = await User.findOne({
     email: req.body.email,
   });
@@ -72,7 +74,6 @@ app.post("/api/login", async (req, res) => {
 });
 
 app.post("/api/quiz", async (req, res) => {
-  if(req.method === 'OPTIONS') { return res.status(200).json(({ body: "OK" })) }
   try {
     const token = req.headers["x-access-token"];
     const decoded = jwt.verify(token, process.env.JWT_SECRET);
@@ -108,7 +109,6 @@ app.post("/api/quiz", async (req, res) => {
 });
 
 app.post("/api/result", async (req, res) => {
-  if(req.method === 'OPTIONS') { return res.status(200).json(({ body: "OK" })) }
   try {
     const token = req.headers["x-access-token"];
     const decoded = jwt.verify(token, process.env.JWT_SECRET);
@@ -140,7 +140,6 @@ app.post("/api/result", async (req, res) => {
 });
 
 app.get("/api/result/:quizId", async (req, res) => {
-  if(req.method === 'OPTIONS') { return res.status(200).json(({ body: "OK" })) }
   try {
     const token = req.headers["x-access-token"];
     const decoded = jwt.verify(token, process.env.JWT_SECRET);
@@ -172,7 +171,6 @@ app.get("/api/result/:quizId", async (req, res) => {
 });
 
 app.get("/api/history", async (req, res) => {
-  if(req.method === 'OPTIONS') { return res.status(200).json(({ body: "OK" })) }
   try {
     const token = req.headers["x-access-token"];
     const decoded = jwt.verify(token, process.env.JWT_SECRET);
