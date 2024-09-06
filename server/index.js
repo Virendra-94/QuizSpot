@@ -12,7 +12,7 @@ const app = express();
 const saltRounds = parseInt(process.env.SALT_ROUNDS);
 
 app.use(cors({
-  origin: '*', 
+  origin: 'https://quiz-spot.vercel.app', 
   methods: ['GET', 'POST', 'PUT', 'DELETE'],
   allowedHeaders: ['Content-Type', 'Authorization'],
 }));
