@@ -87,7 +87,7 @@ function Quiz() {
     });
     score = score + myScore;
 
-    const req = await fetch("https://quizspot.onrender.com/api/result", {
+    const req = await fetch("http://localhost:5000/api/result", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
