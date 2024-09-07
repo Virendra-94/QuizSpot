@@ -29,10 +29,10 @@ function Result() {
       localStorage.removeItem("token");
       history.replace("/login");
     }
-  }, [callResultData, history]);
+  }, []);
 
   async function callResultData() {
-    const req = await fetch("https://quiz-spot-server.vercel.app/api/result/" + quizId, {
+    const req = await fetch("https://quizspot.onrender.com/api/result/" + quizId, {
       method: "GET",
       headers: {
         "Content-Type": "application/json",

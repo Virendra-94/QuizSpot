@@ -87,7 +87,7 @@ function Quiz() {
     });
     score = score + myScore;
 
-    const req = await fetch("https://quiz-spot-server.vercel.app/api/result", {
+    const req = await fetch("https://quizspot.onrender.com/api/result", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

@@ -27,10 +27,10 @@ function History() {
       localStorage.removeItem("token");
       history.replace("/login");
     }
-  }, [getHistory, history]);
+  }, []);
 
   async function getHistory() {
-    const req = await fetch("https://quiz-spot-server.vercel.app/api/history", {
+    const req = await fetch("https://quizspot.onrender.com/api/history", {
       method: "GET",
       headers: {
         "Content-Type": "application/json",

@@ -24,7 +24,7 @@ function Home() {
   async function handleSubmit(event) {
     event.preventDefault();
     setLoading(true);
-    const req = await fetch("https://quiz-spot-server.vercel.app/api/quiz", {
+    const req = await fetch("https://quizspot.onrender.com/api/quiz", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -62,16 +62,11 @@ function Home() {
     const token = localStorage.getItem("token");
     if (token) {
       const email = jwt.decode(token);
-      if (!email) {
-        localStorage.removeItem("token");
-        history.replace("/login");
-      }
-      if (Date.now() > jwt.decode(token).exp * 1000) {
+      if (!email || Date.now() > jwt.decode(token).exp * 1000) {
         localStorage.removeItem("token");
         history.replace("/login");
       }
     } else {
-      localStorage.removeItem("token");
       history.replace("/login");
     }
   }, [history]);
