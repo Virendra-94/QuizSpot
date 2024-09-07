@@ -24,7 +24,7 @@ function Home() {
   async function handleSubmit(event) {
     event.preventDefault();
     setLoading(true);
-    const req = await fetch("http://localhost:5000/api/quiz", {
+    const req = await fetch("https://quizspot.onrender.com/api/quiz", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
