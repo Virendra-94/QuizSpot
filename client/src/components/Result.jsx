@@ -29,7 +29,7 @@ function Result() {
       localStorage.removeItem("token");
       history.replace("/login");
     }
-  }, []);
+  }, [callResultData, history]);
 
   async function callResultData() {
     const req = await fetch("https://quiz-spot-server.vercel.app/api/result/" + quizId, {

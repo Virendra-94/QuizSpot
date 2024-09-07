@@ -45,7 +45,7 @@ function Quiz() {
       setTimeLeft((prevTime) => (prevTime > 0 ? prevTime - 1 : 0));
     }, 1000);
     return () => clearInterval(timer);
-  }, [timeLeft]);
+  }, [handleAutoNext]);
 
   
   useEffect(() => {

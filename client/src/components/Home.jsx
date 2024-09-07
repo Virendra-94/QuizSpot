@@ -74,7 +74,7 @@ function Home() {
       localStorage.removeItem("token");
       history.replace("/login");
     }
-  }, []);
+  }, [history]);
 
   function viewHistory(){
     history.push({
